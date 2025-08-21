@@ -1,0 +1,14 @@
+{
+    "models": {
+        "claude-sonnet-4-20250514": {
+            "input_tokens": 261,
+            "output_tokens": 8890,
+            "total_tokens": 9151
+        }
+    },
+    "total": {
+        "input_tokens": 261,
+        "output_tokens": 8890,
+        "total_tokens": 9151
+    }
+}

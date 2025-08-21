@@ -1,0 +1,289 @@
+{
+  "hotspots": [
+    {
+      "cpuPercent": 32.88,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Emitter.java",
+      "line": 745,
+      "method": "whitespaceToSpace",
+      "code": "return Character.isWhitespace(c) ? \u0027 \u0027 : c;"
+    },
+    {
+      "cpuPercent": 19.72,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Processor.java",
+      "line": 644,
+      "method": "readLines",
+      "code": "c \u003d this.reader.read();"
+    },
+    {
+      "cpuPercent": 15.22,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Processor.java",
+      "line": 637,
+      "method": "readLines",
+      "code": "sb.append((char)c);"
+    },
+    {
+      "cpuPercent": 5.33,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Emitter.java",
+      "line": 728,
+      "method": "recursiveEmitLine",
+      "code": "out.append(in.charAt(pos));"
+    },
+    {
+      "cpuPercent": 5.09,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Emitter.java",
+      "line": 763,
+      "method": "getToken",
+      "code": "final char c3 \u003d pos + 3 \u003c in.length() ? whitespaceToSpace(in.charAt(pos + 3)) : \u0027 \u0027;"
+    },
+    {
+      "cpuPercent": 4.60,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Emitter.java",
+      "line": 761,
+      "method": "getToken",
+      "code": "final char c1 \u003d pos + 1 \u003c in.length() ? whitespaceToSpace(in.charAt(pos + 1)) : \u0027 \u0027;"
+    },
+    {
+      "cpuPercent": 3.86,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Emitter.java",
+      "line": 759,
+      "method": "getToken",
+      "code": "final char c0 \u003d pos \u003e 0 ? whitespaceToSpace(in.charAt(pos - 1)) : \u0027 \u0027;"
+    },
+    {
+      "cpuPercent": 3.62,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Emitter.java",
+      "line": 762,
+      "method": "getToken",
+      "code": "final char c2 \u003d pos + 2 \u003c in.length() ? whitespaceToSpace(in.charAt(pos + 2)) : \u0027 \u0027;"
+    },
+    {
+      "cpuPercent": 2.40,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Emitter.java",
+      "line": 760,
+      "method": "getToken",
+      "code": "final char c \u003d whitespaceToSpace(in.charAt(pos));"
+    },
+    {
+      "cpuPercent": 1.76,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Emitter.java",
+      "line": 547,
+      "method": "recursiveEmitLine",
+      "code": "while (pos \u003c in.length())"
+    },
+    {
+      "cpuPercent": 1.52,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Emitter.java",
+      "line": 549,
+      "method": "recursiveEmitLine",
+      "code": "final MarkToken mt \u003d this.getToken(in, pos);"
+    },
+    {
+      "cpuPercent": 1.27,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Emitter.java",
+      "line": 557,
+      "method": "recursiveEmitLine",
+      "code": "switch (mt)"
+    },
+    {
+      "cpuPercent": 0.24,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Block.java",
+      "line": 192,
+      "method": "removeTrailingEmptyLines",
+      "code": "Line line \u003d this.lineTail;"
+    },
+    {
+      "cpuPercent": 0.24,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Line.java",
+      "line": 48,
+      "method": "\u003cinit\u003e",
+      "code": "{"
+    },
+    {
+      "cpuPercent": 0.24,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Processor.java",
+      "line": 650,
+      "method": "readLines",
+      "code": "line.value \u003d sb.toString();"
+    },
+    {
+      "cpuPercent": 0.20,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Line.java",
+      "line": 337,
+      "method": "getLineType",
+      "code": "if (this.value.length() - this.leading \u003e\u003d 3 \u0026\u0026 Character.isDigit(this.value.charAt(this.leading)))"
+    },
+    {
+      "cpuPercent": 0.15,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Processor.java",
+      "line": 607,
+      "method": "readLines",
+      "code": "c \u003d this.reader.read();"
+    },
+    {
+      "cpuPercent": 0.15,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Emitter.java",
+      "line": 52,
+      "method": "addLinkRef",
+      "code": "this.linkRefs.put(key.toLowerCase(), linkRef);"
+    },
+    {
+      "cpuPercent": 0.15,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Line.java",
+      "line": 220,
+      "method": "countChars",
+      "code": "final char c \u003d this.value.charAt(i);"
+    },
+    {
+      "cpuPercent": 0.10,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Line.java",
+      "line": 320,
+      "method": "getLineType",
+      "code": "if (this.countChars(this.value.charAt(this.leading)) \u003e\u003d 3)"
+    },
+    {
+      "cpuPercent": 0.10,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Block.java",
+      "line": 42,
+      "method": "\u003cinit\u003e",
+      "code": "{"
+    },
+    {
+      "cpuPercent": 0.10,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Line.java",
+      "line": 317,
+      "method": "getLineType",
+      "code": "\u0026\u0026 (this.value.charAt(this.leading) \u003d\u003d \u0027*\u0027 || this.value.charAt(this.leading) \u003d\u003d \u0027-\u0027 || this.value"
+    },
+    {
+      "cpuPercent": 0.10,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Line.java",
+      "line": 326,
+      "method": "getLineType",
+      "code": "if (this.value.length() - this.leading \u003e\u003d 2 \u0026\u0026 this.value.charAt(this.leading + 1) \u003d\u003d \u0027 \u0027)"
+    },
+    {
+      "cpuPercent": 0.10,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Emitter.java",
+      "line": 207,
+      "method": "findToken",
+      "code": "if (this.getToken(in, pos) \u003d\u003d token)"
+    },
+    {
+      "cpuPercent": 0.10,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/DefaultDecorator.java",
+      "line": 93,
+      "method": "openCodeSpan",
+      "code": "out.append(\"\u003ccode\u003e\");"
+    },
+    {
+      "cpuPercent": 0.10,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Emitter.java",
+      "line": 545,
+      "method": "recursiveEmitLine",
+      "code": "int pos \u003d start, a, b;"
+    },
+    {
+      "cpuPercent": 0.05,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Line.java",
+      "line": 125,
+      "method": "readUntil",
+      "code": "final char ch \u003d this.value.charAt(pos);"
+    },
+    {
+      "cpuPercent": 0.05,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Line.java",
+      "line": 173,
+      "method": "readUntil",
+      "code": "sb.append(ch);"
+    },
+    {
+      "cpuPercent": 0.05,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Processor.java",
+      "line": 596,
+      "method": "readLines",
+      "code": "sb.setLength(0);"
+    },
+    {
+      "cpuPercent": 0.05,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Block.java",
+      "line": 210,
+      "method": "split",
+      "code": "final Block block \u003d new Block();"
+    },
+    {
+      "cpuPercent": 0.05,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Line.java",
+      "line": 294,
+      "method": "getLineType",
+      "code": "if (this.value.charAt(this.leading) \u003d\u003d \u0027\u003e\u0027)"
+    },
+    {
+      "cpuPercent": 0.05,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Line.java",
+      "line": 350,
+      "method": "getLineType",
+      "code": "if (this.value.charAt(this.leading) \u003d\u003d \u0027\u003c\u0027)"
+    },
+    {
+      "cpuPercent": 0.05,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Line.java",
+      "line": 279,
+      "method": "getLineType",
+      "code": "if (this.isEmpty)"
+    },
+    {
+      "cpuPercent": 0.05,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Processor.java",
+      "line": 774,
+      "method": "initListBlock",
+      "code": "final LineType t \u003d line.getLineType(this.config);"
+    },
+    {
+      "cpuPercent": 0.05,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Line.java",
+      "line": 316,
+      "method": "getLineType",
+      "code": "if (this.value.length() - this.leading - this.trailing \u003e 2"
+    },
+    {
+      "cpuPercent": 0.05,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Line.java",
+      "line": 289,
+      "method": "getLineType",
+      "code": "if (this.value.charAt(this.leading) \u003d\u003d \u0027#\u0027)"
+    },
+    {
+      "cpuPercent": 0.05,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Emitter.java",
+      "line": 546,
+      "method": "recursiveEmitLine",
+      "code": "final StringBuilder temp \u003d new StringBuilder();"
+    },
+    {
+      "cpuPercent": 0.05,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Utils.java",
+      "line": 279,
+      "method": "readMdLinkId",
+      "code": "out.append(ch);"
+    },
+    {
+      "cpuPercent": 0.05,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Utils.java",
+      "line": 508,
+      "method": "appendValue",
+      "code": "out.append(c);"
+    },
+    {
+      "cpuPercent": 0.05,
+      "filePath": "/workspace/target/src/main/java/com/github/rjeschke/txtmark/Emitter.java",
+      "line": 565,
+      "method": "recursiveEmitLine",
+      "code": "out.append(temp);"
+    }
+  ],
+  "totalSamples": 40,
+  "analysis": {
+    "packageFilter": "com.github",
+    "generatedAt": "Fri Aug 15 16:35:33 UTC 2025"
+  }
+}

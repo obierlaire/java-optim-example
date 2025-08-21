@@ -1,0 +1,18 @@
+services:
+  java-optim:
+    build: .
+    image: java-optim
+    container_name: java-optim-container
+    cap_add:
+      - SYS_PTRACE
+      - SYS_ADMIN
+    volumes:
+      - ./target:/workspace/target
+      - ./tools:/workspace/tools
+      - ./results:/workspace/results
+      - ./test:/workspace/test
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
+    command: /bin/bash
+    

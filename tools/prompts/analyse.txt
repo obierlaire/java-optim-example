@@ -1,0 +1,3 @@
+Analyze the Java project in target/ directory only. Write analysis to results/analysis.md.
+
+Cover: project structure, dependencies, code quality, main functionality, tech stack, recommendations.

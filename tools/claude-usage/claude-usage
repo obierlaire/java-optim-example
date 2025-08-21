@@ -1,0 +1,120 @@
+#!/usr/bin/env groovy
+
+@Grab('org.apache.groovy:groovy-json:4.0.6')
+
+import groovy.json.JsonSlurper
+import groovy.transform.Field
+
+@Field Map<String, Map<String, Long>> modelStats = [:]
+
+// Claude pricing in USD per 1M tokens
+@Field Map<String, Map<String, Double>> modelPricing = [
+    'claude-sonnet-4-20250514': [input: 3.00, output: 15.00],
+    'claude-3-5-sonnet-20241022': [input: 3.00, output: 15.00],
+    'claude-3-5-sonnet-20240620': [input: 3.00, output: 15.00],
+    'claude-3-opus-20240229': [input: 15.00, output: 75.00],
+    'claude-3-sonnet-20240229': [input: 3.00, output: 15.00],
+    'claude-3-haiku-20240307': [input: 0.25, output: 1.25]
+]
+
+def calculateCost(model, inputTokens, outputTokens) {
+    def pricing = modelPricing[model]
+    if (!pricing) {
+        return [input: 0.0, output: 0.0, total: 0.0]
+    }
+    
+    def inputCost = (inputTokens / 1_000_000.0) * pricing.input
+    def outputCost = (outputTokens / 1_000_000.0) * pricing.output
+    
+    return [
+        input: inputCost,
+        output: outputCost, 
+        total: inputCost + outputCost
+    ]
+}
+
+def processUsage(usage, model) {
+    if (!modelStats[model]) {
+        modelStats[model] = [inputTokens: 0, outputTokens: 0]
+    }
+    
+    if (usage.input_tokens) {
+        modelStats[model].inputTokens += usage.input_tokens
+    }
+    if (usage.output_tokens) {
+        modelStats[model].outputTokens += usage.output_tokens
+    }
+}
+
+def processFile(filename) {
+    def jsonSlurper = new JsonSlurper()
+    
+    new File(filename).eachLine { line ->
+        try {
+            def json = jsonSlurper.parseText(line)
+            
+            if (json.type == "assistant" && json.message?.usage && json.message?.model) {
+                processUsage(json.message.usage, json.message.model)
+            } else if (json.type == "result" && json.usage && json.session_id) {
+                def model = "claude-sonnet-4-20250514"
+                processUsage(json.usage, model)
+            }
+        } catch (Exception e) {
+            // Skip malformed lines
+        }
+    }
+}
+
+if (args.length == 0) {
+    println "Usage: claude-usage <json-log-file>"
+    System.exit(1)
+}
+
+def filename = args[0]
+if (!new File(filename).exists()) {
+    println "Error: File $filename does not exist"
+    System.exit(1)
+}
+
+processFile(filename)
+
+long totalInputTokens = 0
+long totalOutputTokens = 0
+double totalInputCost = 0.0
+double totalOutputCost = 0.0
+
+def result = [
+    models: [:],
+    total: [:]
+]
+
+modelStats.each { model, stats ->
+    def cost = calculateCost(model, stats.inputTokens, stats.outputTokens)
+    
+    result.models[model] = [
+        input_tokens: stats.inputTokens,
+        output_tokens: stats.outputTokens,
+        total_tokens: stats.inputTokens + stats.outputTokens,
+        input_cost_usd: cost.input,
+        output_cost_usd: cost.output,
+        total_cost_usd: cost.total
+    ]
+    
+    totalInputTokens += stats.inputTokens
+    totalOutputTokens += stats.outputTokens
+    totalInputCost += cost.input
+    totalOutputCost += cost.output
+}
+
+result.total = [
+    input_tokens: totalInputTokens,
+    output_tokens: totalOutputTokens,
+    total_tokens: totalInputTokens + totalOutputTokens,
+    input_cost_usd: totalInputCost,
+    output_cost_usd: totalOutputCost,
+    total_cost_usd: totalInputCost + totalOutputCost
+]
+
+import groovy.json.JsonBuilder
+def json = new JsonBuilder(result)
+println json.toPrettyString()

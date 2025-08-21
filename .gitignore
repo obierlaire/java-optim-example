@@ -1,0 +1,23 @@
+# Target folder contents (keep folder structure but ignore contents)
+target/*
+!target/.gitkeep
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# JFR Analyser Maven target folder
+tools/jfr-analyser/target/
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker volumes and temp files
+*.log

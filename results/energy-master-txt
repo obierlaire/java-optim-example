@@ -1,0 +1,27 @@
+======================================================================
+BENCHMARK RESULTS (3 ITERATIONS)
+======================================================================
+ENERGY:
+  Measurements (J): [483, 487, 538]
+  Median:    488 J  (0.135 Wh)
+  Mean:      503 J  (0.140 Wh)
+  Min-Max:   483 - 539 J
+  Std dev:   25.3 J (5.0%)
+  Range:     56 J (11.1%)
+
+TIME:
+  Measurements (s): ['10.65', '10.74', '11.88']
+  Median:    10.74 s
+  Mean:      11.09 s
+  Min-Max:   10.65 - 11.88 s
+
+CO2 EMISSIONS:
+  Measurements (gCO2): ['0.051', '0.052', '0.057']
+  Median:    0.052 gCO2
+  Mean:      0.053 gCO2
+  Min-Max:   0.051 - 0.057 gCO2
+
+LOCATION & CARBON INTENSITY:
+  Country:   Germany
+  Carbon Intensity: 380.9 gCO2/kWh
+======================================================================

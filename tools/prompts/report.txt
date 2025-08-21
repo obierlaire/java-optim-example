@@ -1,0 +1,2 @@
+Write a report document in results/report.md
+In this document, for each hostpot, write if you have succed to fix the hotspot, and describe the hotspot and your fix. 

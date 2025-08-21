@@ -1,0 +1,4 @@
+# Always read results/analysis.md to understand the project
+
+Look at results/hotspots_profile.json and fix the code in target to make sure those hotspots are optimised. The code should of course run well after that. Optimise only the 4th hotspot.
+Run the tests and fix any error. 
